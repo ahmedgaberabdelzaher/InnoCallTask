@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Task.Views.LoginPage" BackgroundColor="white">
+    <ContentPage.Content>
+
+        <Grid Margin="20" >
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="icon.PNG" Grid.Row="0" Margin="50"></Image>
+                <Frame CornerRadius="5" HeightRequest="50" VerticalOptions="CenterAndExpand" Grid.Row="1" BorderColor="Gray" Padding="0" Margin="5">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Choose Langauge" x:Name="SelectedLangauge" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                        <BoxView HeightRequest="30" Color="Gray" WidthRequest="1"></BoxView>
+                        <Image Source="arr_down_1.png" Aspect="Fill" HorizontalOptions="End"></Image>
+                    </StackLayout>
+                </Frame>
+            <StackLayout Grid.Row="2" VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="5" BorderColor="Gray" Padding="0,0,0,-7" Margin="5">
+                        <Entry Placeholder="Enter User Name" ClearButtonVisibility="WhileEditing"></Entry>
+                    </Frame>
+                    <Frame CornerRadius="5" BorderColor="Gray" Padding="0,0,0,-7" Margin="5">
+                        <Entry Placeholder="Password"></Entry>
+                    </Frame>
+
+                </StackLayout>
+            <ListView x:Name="LangugeList" VerticalOptions="CenterAndExpand" ItemsSource="{Binding Langauges}"  Grid.Row="2"  Margin="5,-10,5,0" IsVisible="False" HasUnevenRows="True" BackgroundColor="White" SeparatorColor="Gray" HeightRequest="90" ItemSelected="LangugeList_ItemSelected" SeparatorVisibility="Default">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding}" Margin="10" TextColor="Black"></Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            <StackLayout Grid.Row="3" VerticalOptions="EndAndExpand">
+                <Button Text="Login" Command="{Binding LoginCommand}" Margin="5" CornerRadius="5" BackgroundColor="#078ECF" TextColor="White"></Button>
+                <Button BackgroundColor="Transparent"  Text="Forget Password?" TextColor="Gray" HorizontalOptions="CenterAndExpand" Opacity="0.5"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

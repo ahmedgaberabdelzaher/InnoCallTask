@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+                xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+               BarBackgroundColor="#EEEEEE"
+             NavigationPage.HasBackButton="False"
+             x:Class="Task.Views.Home">
+    <TabbedPage.ToolbarItems>
+      <ToolbarItem Text=""  Order="Secondary"></ToolbarItem>
+        <ToolbarItem IconImageSource="LogoutIcon.png" Command="{Binding LogoutCommand}" Order="Primary"></ToolbarItem>
+    </TabbedPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="INNOCALLS" FontSize="Title" FontAttributes="Bold" TextColor="White"></Label>
+            <Label Text="Extentions: 101" FontSize="Small" TextColor="White"></Label>
+            <Label Text="{Binding StatusText}" TextColor="White" FontSize="Small">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnlineOfLineCommand}"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label> 
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage IconImageSource="Dialericon.PNG">
+    <ContentPage.Content>
+        <Grid>
+                <StackLayout Grid.Row="0">
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"> 
+                    <Frame BorderColor="Gray" Padding="0" Margin="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="SaudiArabiaFlag.png" Aspect="AspectFit" Margin="0" HeightRequest="20"></Image>
+                            <Label Text="956" TextColor="Black" VerticalOptions="Center"></Label>
+                            <BoxView WidthRequest="2" Color="Gray" HeightRequest="10"></BoxView>
+                            <Image Source="arr_down_1.png"></Image>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="5965655446466" VerticalOptions="Center" TextColor="Black"></Label>
+                    </StackLayout>
+                    <ImageButton Source="Call.png" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50" Command="{Binding CallCommand}"></ImageButton>
+                </StackLayout>
+            <Grid Grid.Row="0" IsVisible="{Binding IsMessageVisible}" BackgroundColor="White" Opacity="0.9">
+                <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20">
+                    <StackLayout>
+                        <Label Text="X" FontSize="Large" TextColor="Blue" HorizontalOptions="Start"></Label>
+                        <Label Text="You are Offline" HorizontalOptions="Center"></Label>
+                        <Label Text="Please Call Your Representitive:" HorizontalOptions="Center"></Label>
+                        <Label Text="https://docs.microsoft.com/xamarin/" HorizontalOptions="Center" TextColor="Blue"></Label>
+                        <Button Text="Ok" Command="{Binding OkCommand}" Margin="5" CornerRadius="5" BackgroundColor="#078ECF" TextColor="White"></Button>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+    </ContentPage>
+    <ContentPage IconImageSource="Historyicon.png">
+        <CollectionView ItemsSource="{Binding CallHistoryList}" SelectionChangedCommand="{Binding CallSelectionCommand}" SelectionMode="Single" SelectedItem="{Binding CallSelected,Mode=TwoWay}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding image}" Grid.Row="0" Grid.Column="0"></Image>
+                            <StackLayout Grid.Column="1" Spacing="0" Margin="0" Grid.Row="0">
+                                <Label Text="{Binding PhoneNumber}" FontSize="Medium" TextColor="Black" Margin="10,10,10,0" Padding="0"></Label>
+                                <Label Text="{Binding date}" FontSize="Small" Margin="10,0,0,0" Padding="0"></Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#EEEEEE" IsVisible="{Binding IsCall}">
+                                <StackLayout Margin="40,5,5,5">
+                                    <Image Source="phone.png" HeightRequest="30" WidthRequest="30"></Image>
+                                    <Label Text="Call"></Label>
+                                </StackLayout>
+                            <StackLayout HorizontalOptions="EndAndExpand" Margin="5,5,40,5">
+                                    <Image Source="info.png" HeightRequest="30" WidthRequest="30"></Image>
+                                    <Label Text="Details"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage>
+</TabbedPage>
