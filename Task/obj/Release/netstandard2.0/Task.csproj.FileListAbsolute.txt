@@ -1,0 +1,15 @@
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\bin\Release\netstandard2.0\Task.deps.json
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\bin\Release\netstandard2.0\Task.dll
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\bin\Release\netstandard2.0\ref\Task.dll
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\bin\Release\netstandard2.0\Task.pdb
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Views\Home.xaml.g.cs
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Views\TabbedPage1.xaml.g.cs
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Task.AssemblyInfoInputs.cache
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Task.AssemblyInfo.cs
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Task.dll
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\ref\Task.dll
+C:\Users\Ahmed Gaber\source\repos\Task\InnoCallTask\Task\obj\Release\netstandard2.0\Task.pdb

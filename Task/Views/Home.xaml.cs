@@ -16,6 +16,20 @@ namespace Task.Views
         {
             InitializeComponent();
         }
-       
+
+        private void BtnNumber_Clicked(object sender, EventArgs e)
+        {
+            var enteredNumber = (sender as Button).Text;
+            this.PhoneNumber.Text += enteredNumber;
+        }
+
+        private void Btclear_Clicked(object sender, EventArgs e)
+        {
+            if (PhoneNumber.Text.Length>0)
+            {
+              PhoneNumber.Text=PhoneNumber.Text.Remove(PhoneNumber.Text.Length-1,1);
+            }
+          
+        }
     }
 }
